@@ -1,4 +1,5 @@
 import * as React from "react";
+import Navbar from "../components/Navbar";
 import './main.css';
 
 
@@ -6,7 +7,8 @@ import './main.css';
 const IndexPage = () => {
 
   return (
-
+    <>
+    <Navbar></Navbar>
     <main>
         <section className="opening-screen" >
           <h1>Welcome... buckle up!</h1>
@@ -21,11 +23,13 @@ const IndexPage = () => {
             <div className="anim-cube">
               <div className="cube text">
                 <h3>Projects</h3>
+
               </div>
             </div>
           </div>
         </section>
       </main>
+    </>
   )
 }
 
