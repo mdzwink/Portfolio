@@ -3,142 +3,206 @@
 
 
 body {
-  
-  color: white;
   margin: 0;
   padding: 0;
+  background-color: black;
+  overflow: hidden;
 }
 
-.opening-screen {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+main {
+  width: 100vw;
+  max-width: 100%;
   height: 100vh;
-  width: 100%;
-  padding-top: 1.3em;
-  padding-bottom: 1.3em;
-  background: radial-gradient(rgb(30, 53, 165), rgb(71, 42, 109), rgb(57, 16, 104));
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-start;
+  background-color: black;
+  overflow: hidden;
+  cursor: url('../images/fairy-white-transparent20-20.png'), pointer;
+  animation: introzoom 10s;
+}
+@keyframes introzoom {
+  from {
+    transform: translateY(1000px)
+               scale(.08, .08);
+  }
+  to {
+    transform: translateY(0px)
+               scale(1, 1);
+  }
 }
 
-.about-me {
+
+
+div.leftspinners,
+div.rightspinners {
+  width: 20vw;
+  height: 90%;
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+div.leftspinners {
+  transform: rotate(.07turn);
+}
+div.rightspinners {
+  transform: rotate(-.07turn);
+}
+div.llaps {
+  width: 100px;
+  height: 100px;
+  box-shadow: 0 -3px 20px #27666144,
+              inset 0 -4px 8px #27666144;
+}
+div.llapm {
+  width: 155px;
+  height: 155px;
+  transform: translateX(200px);
+  box-shadow: 0 -3px 30px #27666166,
+              inset 0 -3px 10px #27666166;
+}
+div.llap {
+  width: 250px;
+  height: 250px;
+  box-shadow: 0 -3px 50px #276661aa,
+  inset 0 -4px 12px #276661aa;
+}
+div.llaps,
+div.llapm,
+div.llap {
+  display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
-  height: 100vh;
-  width: 100%;
-  padding-top: 1.3em;
-  padding-bottom: 1.3em;
-  background: linear-gradient(to left, rgb(57, 16, 104), rgb(71, 42, 107), rgb(57, 16, 104));
+  animation: throbbing 1000ms ease-in-out 0ms infinite alternate;
+  border-radius: 50%;
+  transition: all 3000ms;
+}
+div.llaps:hover {
+  transition: all 1000ms;
+  box-shadow: 0 -6px 20px #276661aa,
+              inset 0 -6px 10px #27666199,
+              inset 0 -6px 80px #13335e99,
+              0px 0px 200px #2f948c99;
+}
+div.llapm:hover {
+  transition: all 1000ms;
+  box-shadow: 0 -6px 30px #276661aa,
+              inset 0 -6px 40px #27666199,
+              inset 0 -6px 100px #13335e99,
+              0px 0px 215px #2f948c99;
+}
+div.llap:hover {
+  transition: all 1000ms;
+  box-shadow: 0 -6px 50px #276661aa,
+              inset 0 -6px 60px #27666199,
+              inset 0 -6px 130px #13335e99,
+              0px 0px 2400px #2f948c99;
 }
 
+div.llac {
+  position: relative;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: spinner 2000ms linear 0ms infinite normal forwards;
+  box-shadow: 0 -2px 9px #5a1414ac,
+  inset 0 -2px 9px #5a1414ac;
+  margin-top: 3em;
+  transition: all 700ms;
+}
+div.llac > p {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color : #5a1414ac;
+}
+div.llac:hover {
+  animation-duration: 4s;
+  box-shadow: 0 -2px 9px #2f948c99,
+              inset 0 -2px 9px #2f948c99;
+  transition: all 600ms;
+}
 
-.projects {
+main .welcome-txt {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  width: 100%;
-  background: gray;
 }
-
-
-.welcome-text {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  color: white;
-  font-family: 'Silkscreen', cursive;
-  font-family: 'Nunito', sans-serif;
-  font-weight: 200;
+main .welcome-txt h1 {
+  text-shadow: #68f1e5aa 0 0 20px;
+  color: #68f1e600;
+  font-size: 5em;
+  transition: all 2500ms;
+  animation: welcome 1s linear 8s;
 }
-
-
-.static-cube {
-  display: grid;
-  justify-content: center;
-  align-items: center;
-  height: 150px;
-  width: 150px;
-  background-color: #AAAAAA;
-  box-shadow: 0px 1px 30px rgb(116, 105, 129);
+main .welcome-txt h1:hover {
+  transform: translateY(-5px);
+  text-shadow: #68f1e5aa 0 5px 25px;
+  color: #68f1e629;
+  transition: all 500ms;
 }
-
-.anim-cube {
-  display: grid;
-  justify-content: center;
-  text-align: center;
-  height: 150px;
-  width: 150px;
-  background-color: black;
-  transform: rotate(0.12turn);
-  opacity: 0.66;
-  color: black;
-}
-
-.anim-cube:hover {
-  animation: cubelock;
-  animation-duration: 1s;
-  animation-iteration-count: 1;
-  animation-direction: forwards;
-  animation-fill-mode: forwards;
-}
-
-@keyframes cubelock {
+@keyframes welcome {
   from {
-    transform: rotate(0.12turn) scale(1.1);
-
+    text-shadow: #68f1e5aa 0 5px 25px;
   }
-
-  80% {
-    transform: rotate(0turn) scale(1.1);
-    box-shadow: 3px 1px 7px 30px rgb(116, 105, 129);
-    background-color: black;
-    color: black;
-  }
-
-  89% {
-    transform: rotate(0turn) scale(1);
-    box-shadow: 0px 1px 7px 3px rgb(116, 105, 129);
-    opacity: 0.66;
-    background-color: rgb(37, 14, 63);
-    color: black;
-  }
-
-  90% {
-    transform: rotate(0turn) scale(1);
-    opacity: 1;
-    background-color: rgb(37, 14, 63);
-    color: orange;
-  }
-  
-  95% {
-    transform: rotate(0turn) scale(1);
-    box-shadow: 0px 1px 900px 900px rgb(98, 48, 159);
-    background-color: rgb(37, 14, 63);
-    opacity: 1;
-    color: orange;
-  }
-
-  98%{
-    box-shadow: 0px 1px 1000px 90px rgb(186, 178, 195);
-    background-color: rgb(37, 14, 63);
-    opacity: 1;
-    color: orange;
-  }
-
   to {
-    transform: rotate(0turn) scale(1);
-    box-shadow: none;
-    background-color: rgb(37, 14, 63);
-    opacity: 1;
-    color: orange;
-    font-family: monospace;
-    font-size: large;
-    align-items: center;
+    text-shadow: #68f1e5aa 0 0 20px;
+  }
+}
+
+div.tile-grid {
+  display: grid;
+  grid-template-columns: 20px 20px 20px 20px 20px 20px 20px 20px 20px 20px 20px;
+  grid-template-rows: 20px 20px 20px 20px 20px 20px 20px 20px 20px 20px 20px;
+  cursor: none;
+  transition: box-shadow 1s;
+  transform: rotate3D(1, 0, 0, 4deg)
+}
+div.tile-grid:hover {
+  box-shadow: 0 -2px 9px #5a1414ac;
+}
+
+div.tile,
+div.key-tile {
+  transition: box-shadow 2s;
+}
+div.tile:hover {
+  box-shadow: inset 0 1px 1px 2px #276661aa;
+  transition: box-shadow 200ms, transform 1s;
+}
+div.key-tile:hover {
+  box-shadow: 0 4px 100px 100px #5a1414ac,
+              inset 0 4px 4px 4px #5a1414ac;
+  transition: box-shadow 3s;
+}
+
+div.center-charger {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+@keyframes throbbing {
+  from {
+    transform: scale(1,1);
+  }
+  to {
+    transform: scale(1.05,1.05);
+  }
+}
+@keyframes spinner {
+  from {
+    transform: rotate(0turn);
+  }
+  to {
+    transform: rotate(1turn);
   }
 }
